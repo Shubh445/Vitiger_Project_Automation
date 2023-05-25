@@ -1,0 +1,419 @@
+package VtigerProject1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Full_Project {
+		
+		
+		public static void main(String[] args) throws InterruptedException {
+			
+			WebDriver driver=new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			driver.get("https://demo.vtiger.com/vtigercrm/index.php");
+			driver.findElement(By.xpath("//button[text()='Sign in']")).click();
+			
+			driver.findElement(By.id("appnavigator")).click();
+			
+			
+			WebElement ele= driver.findElement(By.xpath("//span[text()=' MARKETING']"));
+			Actions action=new Actions(driver);          //span[text()=' MARKETING']
+			action.moveToElement(ele).perform();
+			
+			
+			driver.findElement(By.xpath("//span[text()=' Campaigns']")).click();
+		                               	 //span[text()=' Campañas'] //for Spanish language
+			
+			driver.findElement(By.id("Campaigns_listView_basicAction_LBL_ADD_RECORD")).click();
+			
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_campaignname")).sendKeys("shubham ramteke");
+			
+			WebElement e = driver.findElement(By.id("select2-chosen-2"));
+			Actions a=new Actions(driver);
+			a.moveToElement(e).click().perform();
+			driver.findElement(By.xpath("//div[text()='Team Selling']")).click();
+			
+			WebElement e1 = driver.findElement(By.id("select2-chosen-4"));
+			Actions a1=new Actions(driver);
+			a1.moveToElement(e1).click().perform();
+			driver.findElement(By.xpath("//div[text()='Completed']")).click();
+			
+			WebElement e2 = driver.findElement(By.id("select2-chosen-6"));
+			Actions a2=new Actions(driver);
+			a2.moveToElement(e2).click().perform();
+			driver.findElement(By.xpath("//div[text()='Partners']")).click();
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_targetaudience")).sendKeys("Young Youth");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_sponsor")).sendKeys("Versache");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_closingdate")).click();
+			
+			driver.findElement(By.xpath("(//th[text()='Today'])[1]")).click();
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_targetsize")).sendKeys("997854600");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_numsent")).sendKeys("7172737475");
+		
+			driver.findElement(By.id("Campaigns_editView_fieldName_budgetcost")).sendKeys("1000000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_actualcost")).sendKeys("200000");
+			
+			WebElement e3 = driver.findElement(By.id("select2-chosen-8"));
+			Actions a3=new Actions(driver);
+			a3.moveToElement(e3).click().perform();
+			driver.findElement(By.xpath("//div[text()='Excellent']")).click();
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_expectedrevenue")).sendKeys("50000000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_expectedsalescount")).sendKeys("45000000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_actualsalescount")).sendKeys("7000000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_expectedresponsecount")).sendKeys("680000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_actualresponsecount")).sendKeys("5500000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_expectedroi")).sendKeys("330000");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_actualroi")).sendKeys("850500");
+			
+			driver.findElement(By.id("Campaigns_editView_fieldName_description")).sendKeys("This product so Big You Cant Sponsor it (Check your Bank Balance)");
+			
+			
+	        driver.findElement(By.xpath("//button[text()='Save']")).click();
+			
+			driver.findElement(By.id("appnavigator")).click();
+			WebElement e4 = driver.findElement(By.xpath(" //span[text()=' MARKETING']"));
+			Actions a4=new Actions(driver);
+			a4.moveToElement(e4).perform();
+			
+			driver.findElement(By.xpath("//span[text()=' Leads']")).click();
+			
+			driver.findElement(By.id("Leads_listView_basicAction_LBL_ADD_RECORD")).click();
+			
+			WebElement e5 = driver.findElement(By.xpath("//span[@id='select2-chosen-2']"));
+			Actions a5=new Actions(driver);             
+		    a5.moveToElement(e5).click().perform();
+			driver.findElement(By.xpath("//div[text()='Mr.']")).click();
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_firstname")).sendKeys("Shubham");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_lastname")).sendKeys("Ramteke");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_phone")).sendKeys("9876445635");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_company")).sendKeys("TCS");
+			
+		
+			driver.findElement(By.id("Leads_editView_fieldName_mobile")).sendKeys("8796542354");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_designation")).sendKeys("Test Engineer");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_fax")).sendKeys("ABC");
+			
+			WebElement e6 = driver.findElement(By.id("select2-chosen-4"));
+			Actions a6=new Actions(driver);
+			a6.moveToElement(e6).click().perform();
+			
+			driver.findElement(By.xpath("//div[text()='Partner']")).click();
+//			
+//			
+			driver.findElement(By.id("Leads_editView_fieldName_email")).sendKeys("Shubh@gmail.com");
+//			
+			WebElement e7 = driver.findElement(By.id("select2-chosen-6"));
+			Actions a7=new Actions(driver);
+			a7.moveToElement(e7).click().perform();
+			driver.findElement(By.xpath("//div[text()='Communications']")).click();
+			
+			WebElement e8 = driver.findElement(By.id("select2-chosen-8"));
+			Actions a8=new Actions(driver);
+			a8.moveToElement(e8).click().perform();
+			driver.findElement(By.xpath("//div[text()='Pre Qualified']")).click();
+			
+			WebElement e9 = driver.findElement(By.id("select2-chosen-10"));
+			Actions a9=new Actions(driver);
+			a9.moveToElement(e9).click().perform();
+			driver.findElement(By.xpath("//div[text()='Active']")).click();
+			
+			WebElement e10 = driver.findElement(By.id("select2-chosen-12"));
+			Actions a10=new Actions(driver);
+			a10.moveToElement(e10).click().perform();
+			driver.findElement(By.xpath("//div[text()='Support Group']")).click();
+//			
+	//	
+			driver.findElement(By.id("Leads_editView_fieldName_website")).sendKeys("https://shubhamrateke.com");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_annualrevenue")).sendKeys("1000000");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_noofemployees")).sendKeys("111");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_secondaryemail")).sendKeys("shubh@gmail.com");
+			
+			
+		    driver.findElement(By.id("Leads_editView_fieldName_emailoptout")).click();
+		    
+			
+			driver.findElement(By.id("Leads_editView_fieldName_lane")).sendKeys("Nagpur");
+			
+		
+			driver.findElement(By.id("Leads_editView_fieldName_pobox")).sendKeys("Nagpur");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_code")).sendKeys("444001");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_country")).sendKeys("India");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_city")).sendKeys("Nagpur");
+			
+			
+			driver.findElement(By.id("Leads_editView_fieldName_state")).sendKeys("Maharashtra");
+			
+		
+			driver.findElement(By.id("Leads_editView_fieldName_description")).sendKeys("Nagpur is Orange City");
+			
+			
+			driver.findElement(By.xpath("//button[text()='Save']")).click();
+			
+			
+			driver.findElement(By.id("appnavigator")).click();
+			
+			WebElement e11= driver.findElement(By.xpath("//span[text()=' MARKETING']"));
+			Actions a11=new Actions(driver);
+			a11.moveToElement(e11).perform();	
+			
+			driver.findElement(By.xpath("(//span[text()=' Contacts'])[1]")).click();
+			
+			driver.findElement(By.id("Contacts_listView_basicAction_LBL_ADD_RECORD")).click();
+			
+			WebElement e12= driver.findElement(By.id("select2-chosen-2"));
+			Actions a12=new Actions(driver);
+			a12.moveToElement(e12).click().perform();
+			
+			driver.findElement(By.xpath("//div[text()='Mr.']")).click();
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_firstname")).sendKeys("Shubham");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_lastname")).sendKeys("Ramteke");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_phone")).sendKeys("8888555522");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mobile")).sendKeys("777898422");
+		//	
+			WebElement e13= driver.findElement(By.id("select2-chosen-4"));
+			Actions a13=new Actions(driver);
+			a13.moveToElement(e13).click().perform();
+			
+			driver.findElement(By.xpath("//div[text()='Partner']")).click();
+			
+		//	
+			driver.findElement(By.id("Contacts_editView_fieldName_homephone")).sendKeys("635487965");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_title")).sendKeys("No Title");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_otherphone")).sendKeys("735487955");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_department")).sendKeys("ENTC");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_fax")).sendKeys("No FAX");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_email")).sendKeys("abcd@gmail.com");
+		////	
+		//	
+			driver.findElement(By.id("Contacts_editView_fieldName_birthday")).click();
+//			driver.findElement(By.xpath("(//th[text()='Today'])[1]")).click();
+			driver.findElement(By.xpath("//td[text()='23']")).click();
+			 
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_assistant")).sendKeys("Ass.Priya");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_assistantphone")).sendKeys("8794563155");
+			
+			JavascriptExecutor js= (JavascriptExecutor)driver;
+			js.executeScript("window.scrollBy(0,500)"); //sroll
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_secondaryemail")).sendKeys("xyz12@gmail.com");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_emailoptout")).click();
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_donotcall")).click();
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_reference")).click();
+			
+			WebElement e14= driver.findElement(By.id("select2-chosen-6"));
+			Actions a14=new Actions(driver);
+			a14.moveToElement(e14).click().perform();
+			
+			driver.findElement(By.xpath("//div[text()='Support Group']")).click();
+			
+			
+		//	
+			driver.findElement(By.id("Contacts_editView_fieldName_notify_owner")).click();
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_portal")).click();
+			
+
+//			 driver.findElement(By.id("Contacts_editView_fieldName_support_start_date")).click();
+////			 driver.findElement(By.xpath("(//th[text()='Today'])[4]")).click();
+//			 driver.findElement(By.xpath("(//td[text()='18'])[2]")).click();
+			
+//			 driver.findElement(By.id("Contacts_editView_fieldName_support_end_date")).click();
+//			 driver.findElement(By.xpath("(//th[text()='Today'])[4]")).click();
+//			 driver.findElement(By.xpath("(//td[text()='18'])[2]")).click();
+			 
+			 JavascriptExecutor js1= (JavascriptExecutor)driver;
+				js1.executeScript("window.scrollBy(0,400)"); //sroll
+			
+			driver.findElement(By.name("mailingstreet")).sendKeys("Indora");
+			
+			driver.findElement(By.name("otherstreet")).sendKeys("indora Galli");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mailingpobox")).sendKeys("Soni");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_otherpobox")).sendKeys("Lakhandur");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mailingcity")).sendKeys("Bhandara");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_othercity")).sendKeys("Nagpur");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mailingstate")).sendKeys("Maharashtra");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_otherstate")).sendKeys("MH");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mailingzip")).sendKeys("441803");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_otherzip")).sendKeys("441207");
+			
+			 JavascriptExecutor js2= (JavascriptExecutor)driver;
+				js2.executeScript("window.scrollBy(0,400)"); //sroll
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_mailingcountry")).sendKeys("India");
+			
+			driver.findElement(By.id("Contacts_editView_fieldName_othercountry")).sendKeys("IN");
+			
+			driver.findElement(By.name("description")).sendKeys("No Description needed!");
+			
+//			driver.findElement(By.xpath("//div[@class='fileUploadBtn btn btn-primary']")).click();
+//			
+//
+//			
+//			Runtime.getRuntime().exec("D:\\PECM27\\eclipse\\Selenium\\FileUpload.exe"); //upload file
+//			
+			driver.findElement(By.xpath("//button[text()='Save']")).click();
+			
+			
+			
+			driver.findElement(By.xpath("//div[@id='appnavigator']")).click();
+			WebElement e15= driver.findElement(By.xpath("//span[text()=' MARKETING']"));
+			Actions a15=new Actions(driver);
+			a15.moveToElement(e15).perform();	
+			
+			driver.findElement(By.xpath("(//span[text()=' Organizations'])[1]")).click();
+			
+			driver.findElement(By.id("Accounts_listView_basicAction_LBL_ADD_RECORD")).click();
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_accountname")).sendKeys("Shubham Ramteke");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_website")).sendKeys("https://ShubhamR.com");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_phone")).sendKeys("9876543256");
+		
+			driver.findElement(By.id("Accounts_editView_fieldName_tickersymbol")).sendKeys("123");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_fax")).sendKeys("No Fax");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_otherphone")).sendKeys("6664994664");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_employees")).sendKeys("5566");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_email1")).sendKeys("abcdefgh@gmail.com");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_email2")).sendKeys("xyz@gmail.com");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ownership")).sendKeys("Is In my Hand");
+			
+			WebElement s1 = driver.findElement(By.id("select2-chosen-2"));
+			Actions at= new Actions(driver);
+			at.moveToElement(s1).click().perform();
+			driver.findElement(By.xpath("//div[text()='Communications']")).click();
+			
+			
+			WebElement s2 = driver.findElement(By.id("select2-chosen-4"));
+			Actions atc= new Actions(driver);
+			atc.moveToElement(s2).click().perform();
+			driver.findElement(By.xpath("//div[text()='Project Cancelled']")).click();
+			
+			
+			WebElement s3 = driver.findElement(By.id("select2-chosen-6"));
+			Actions atct= new Actions(driver);
+			atct.moveToElement(s3).click().perform();
+			driver.findElement(By.xpath("//div[text()='Partner']")).click();
+			
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_siccode")).sendKeys("658849");
+			
+			JavascriptExecutor js3=(JavascriptExecutor) driver;
+			js3.executeScript("window.scrollBy(0,400)"); //sroll  
+		
+			   
+			driver.findElement(By.id("Accounts_editView_fieldName_emailoptout")).click();
+			driver.findElement(By.id("Accounts_editView_fieldName_annual_revenue")).sendKeys("150000");
+			
+			WebElement s4 = driver.findElement(By.id("select2-chosen-8"));
+			Actions atcti= new Actions(driver);
+			atcti.moveToElement(s4).click().perform();
+			
+			driver.findElement(By.xpath("//div[text()='Team Selling']")).click();
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_notify_owner")).click();
+			
+			driver.findElement(By.name("bill_street")).sendKeys("pune");
+			
+			driver.findElement(By.name("ship_street")).sendKeys("warje road");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_bill_pobox")).sendKeys("Deccan Bill Box");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ship_pobox")).sendKeys("Shivaji Nagar");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_bill_city")).sendKeys("Pune");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ship_city")).sendKeys("Mumbai");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_bill_state")).sendKeys("Maharashtra");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ship_state")).sendKeys("Karnataka");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_bill_code")).sendKeys("6897");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ship_code")).sendKeys("8893");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_bill_country")).sendKeys("India");
+			
+			driver.findElement(By.id("Accounts_editView_fieldName_ship_country")).sendKeys("India");
+			
+			driver.findElement(By.name("description")).sendKeys("India is my country all indians are my ****");
+			
+			driver.findElement(By.cssSelector("button[class='btn btn-success saveButton']")).click();
+			 
+	}
+}
+
